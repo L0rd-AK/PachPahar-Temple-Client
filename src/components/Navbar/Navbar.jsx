@@ -149,19 +149,20 @@ function Navbar() {
       <div className="navbar bg-[#8B4513]">
         <div className="navbar-start">
           <div className="dropdown text-white">
-            <div
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              tabIndex={0}
-              role="button"
-              className="btn btn-ghost lg:hidden"
-            >
-              {isMenuOpen ? (
-                <p className="text-3xl">
-                  <RxCross2 />
-                </p>
-              ) : (
-                <GiHamburgerMenu className="text-2xl" />
-              )}
+            <div onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost lg:hidden"
+              >
+                {isMenuOpen ? (
+                  <p className="text-3xl">
+                    <RxCross2 tabIndex={0} />
+                  </p>
+                ) : (
+                  <GiHamburgerMenu className="text-2xl" />
+                )}
+              </div>
             </div>
             <ul
               tabIndex={0}
