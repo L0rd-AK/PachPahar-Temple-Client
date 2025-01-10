@@ -226,11 +226,52 @@ function Navbar() {
               </a>
             </Link>
           ) : (
-            <Link to="/login">
-              <a className="px-3 py-2 bg-white text-black font-bold rounded-lg">
-                log in
-              </a>
-            </Link>
+            <div>
+              {user ? (
+                <div className="right-3">
+                  <div className="flex justify-center items-center dropdown">
+                    <div className="">
+                      <img
+                        tabIndex={1}
+                        role="button"
+                        className="rounded-full border-2 border-white h-10 lg:mr-0"
+                        src={
+                          user.photoURL ||
+                          "https://i.ibb.co/3dqGpTW/dummy-prof.png"
+                        }
+                        alt=""
+                      />
+                    </div>
+                    <ul
+                      tabIndex={1}
+                      className="menu menu-sm dropdown-content bg-[#8B4513] rounded-box z-[1] top-14 right-3 p-2 shadow text-white"
+                    >
+                      <li>
+                        <Link to="/">
+                          <a>Profile</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <a href="">Dashboard</a>
+                      </li>
+                      <li>
+                        <Link onClick={() => logOut()} to="/">
+                          <a>Logout</a>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              ) : (
+                <div className="">
+                  <Link to="/login">
+                    <a className="px-3 py-2 bg-white text-black font-bold rounded-lg">
+                      Log in
+                    </a>
+                  </Link>
+                </div>
+              )}
+            </div>
           )}
         </div>
       </div>
