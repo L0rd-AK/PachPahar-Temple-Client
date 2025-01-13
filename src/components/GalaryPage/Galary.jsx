@@ -71,7 +71,7 @@ const Gallery = () => {
       <div className="w-full h-1 bg-gray-200 rounded-full my-2"></div>
       {/* Polaroid Photo Wall */}
       <div className="my-10 relative">
-        <h2 className="text-3xl font-semibold text-center text-gray-700 mb-6">
+        <h2 className="text-3xl font-semibold text-center text-white my-10">
         ফটো ওয়াল
         </h2>
         <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
