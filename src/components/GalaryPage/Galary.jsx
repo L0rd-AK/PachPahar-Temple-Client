@@ -22,50 +22,51 @@ import img14 from "../../../public/galaey/img14.jpg";
 import img15 from "../../../public/galaey/img15.jpg";
 
 const Galary = () => {
-    const images = [
-        img1,
-        img2,
-        img3,
-        img4,
-        img5,
-        img6,
-        img7,
-        img8,
-        img9,
-        img10,
-        img11,
-        img12,
-        img13,
-        img14,
-        img15,
-    ];
+  const images = [
+    img1,
+    img2,
+    img3,
+    img4,
+    img5,
+    img6,
+    img7,
+    img8,
+    img9,
+    img10,
+    img11,
+    img12,
+    img13,
+    img14,
+    img15,
+  ];
 
-    return (
-        <div className="max-w-7xl mx-auto my-10 px-4">
-            <Marquee className="mb-10">
-                {images.slice(4, 9).map((image, index) => (
-                    <div key={index} className="">
-                        <img
-                            className="h-[300px] md:h-[600px] w-full object-cover object-center shadow-lg transition-transform transform hover:scale-105"
-                            src={image}
-                            alt={`gallery-photo-${index}`}
-                        />
-                    </div>
-                ))}
-            </Marquee>
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-                {images.map((image, index) => (
-                    <div key={index} className="p-2">
-                        <img
-                            className="h-[300px] w-full rounded-lg object-cover object-center shadow-lg transition-transform transform hover:scale-105"
-                            src={image}
-                            alt={`gallery-photo-${index}`}
-                        />
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
+  return (
+    <div className="max-w-7xl mx-auto my-10 px-4">
+      <Marquee className="mb-10">
+        {images.slice(4, 9).map((image, index) => (
+          <div key={index} className="">
+            <img
+              className="h-[300px] md:h-[600px] w-full object-cover object-center shadow-lg transition-transform transform hover:scale-105"
+              src={image}
+              alt={`gallery-photo-${index}`}
+            />
+          </div>
+        ))}
+      </Marquee>
+      <h1 className="text-3xl font-bold text-center my-5">আমাদের কালীপুজোর সুন্দর কিছু মুহূর্ত</h1>
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        {images.map((image, index) => (
+          <div key={index} className="p-2">
+            <img
+              className="h-[300px] w-full rounded-lg object-cover object-center shadow-lg transition-transform transform hover:scale-105"
+              src={image}
+              alt={`gallery-photo-${index}`}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Galary;
