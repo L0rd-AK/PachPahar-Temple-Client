@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/scrollbar";
@@ -20,165 +20,52 @@ import img12 from "../../../public/galaey/img12.jpg";
 import img13 from "../../../public/galaey/img13.jpg";
 import img14 from "../../../public/galaey/img14.jpg";
 import img15 from "../../../public/galaey/img15.jpg";
+
 const Galary = () => {
-  const images = [
-    img1,
-    img2,
-    img3,
-    img4,
-    img5,
-    img6,
-    img7,
-    img8,
-    img9,
-    img10,
-    img11,
-    img12,
-    img13,
-    img14,
-    img15,
-  ];
+    const images = [
+        img1,
+        img2,
+        img3,
+        img4,
+        img5,
+        img6,
+        img7,
+        img8,
+        img9,
+        img10,
+        img11,
+        img12,
+        img13,
+        img14,
+        img15,
+    ];
 
-  return (
-    <>
-      <div className="max-w-7xl mx-10 md:mx-auto my-10">
-        <Marquee>
-          <div>
-            <img
-              className="h-[300px] md:h-[600px] w-full object-cover object-top lg:object-center"
-              src={images[4]}
-              alt="gallery-photo"
-            />
-          </div>
-
-          <div>
-            <img
-              className="h-[300px] md:h-[600px] w-full object-cover object-top lg:object-center"
-              src={images[8]}
-              alt="gallery-photo"
-            />
-          </div>
-
-          <div>
-            <img
-              className="h-[300px] md:h-[600px] w-full object-cover object-top lg:object-center"
-              src={images[9]}
-              alt="gallery-photo"
-            />
-          </div>
-
-          <div>
-            <img
-              className="h-[300px] md:h-[600px] w-full object-cover object-top lg:object-center"
-              src={images[6]}
-              alt="gallery-photo"
-            />
-          </div>
-
-          <div>
-            <img
-              className="h-[300px] md:h-[600px] w-full object-cover object-top lg:object-center"
-              src={images[14]}
-              alt="gallery-photo"
-            />
-          </div>
-        </Marquee>
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 mt-16">
-          <div className="grid gap-4">
-            <div>
-              <img
-                className="h-[300px] w-[256px] rounded-lg object-cover object-center"
-                src={images[13]}
-                alt="gallery-photo"
-              />
+    return (
+        <div className="max-w-7xl mx-auto my-10 px-4">
+            <Marquee className="mb-10">
+                {images.slice(4, 9).map((image, index) => (
+                    <div key={index} className="">
+                        <img
+                            className="h-[300px] md:h-[600px] w-full object-cover object-center shadow-lg transition-transform transform hover:scale-105"
+                            src={image}
+                            alt={`gallery-photo-${index}`}
+                        />
+                    </div>
+                ))}
+            </Marquee>
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+                {images.map((image, index) => (
+                    <div key={index} className="p-2">
+                        <img
+                            className="h-[300px] w-full rounded-lg object-cover object-center shadow-lg transition-transform transform hover:scale-105"
+                            src={image}
+                            alt={`gallery-photo-${index}`}
+                        />
+                    </div>
+                ))}
             </div>
-            <div>
-              <img
-                className="h-[300px] w-[256px] rounded-lg object-cover object-center "
-                src={images[1]}
-                alt="gallery-photo"
-              />
-            </div>
-            <div>
-              <img
-                className="h-[300px] w-[256px] rounded-lg object-cover object-center"
-                src={images[2]}
-                alt="gallery-photo"
-              />
-            </div>
-          </div>
-          <div className="grid gap-4">
-            <div>
-              <img
-                className="h-[300px] w-[256px] rounded-lg object-cover object-center"
-                src={images[3]}
-                alt="gallery-photo"
-              />
-            </div>
-            <div>
-              <img
-                className="h-[300px] w-[256px] rounded-lg object-cover object-center"
-                src={images[4]}
-                alt="gallery-photo"
-              />
-            </div>
-            <div>
-              <img
-                className="h-[300px] w-[256px] rounded-lg object-cover object-center "
-                src={images[7]}
-                alt="gallery-photo"
-              />
-            </div>
-          </div>
-          <div className="hidden md:grid gap-4">
-            <div>
-              <img
-                className="h-[300px] w-[256px] rounded-lg object-cover object-center"
-                src={images[8]}
-                alt="gallery-photo"
-              />
-            </div>
-            <div>
-              <img
-                className="h-[300px] w-[256px] rounded-lg object-cover object-center "
-                src={images[9]}
-                alt="gallery-photo"
-              />
-            </div>
-            <div>
-              <img
-                className="h-[300px] w-[256px] rounded-lg object-cover object-center"
-                src={images[10]}
-                alt="gallery-photo"
-              />
-            </div>
-          </div>
-          <div className="hidden md:grid gap-4">
-            <div>
-              <img
-                className="h-[300px] w-[256px] rounded-lg object-cover object-center"
-                src={images[11]}
-                alt="gallery-photo"
-              />
-            </div>
-            <div>
-              <img
-                className="h-[300px] w-[256px] rounded-lg object-cover object-center"
-                src={images[12]}
-                alt="gallery-photo"
-              />
-            </div>
-            <div>
-              <img
-                className="h-[300px] w-[256px] rounded-lg object-cover object-center"
-                src={images[0]}
-                alt="gallery-photo"
-              />
-            </div>
-          </div>
         </div>
-      </div>
-    </>
-  );
+    );
 };
+
 export default Galary;
