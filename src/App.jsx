@@ -1,7 +1,17 @@
 import { SlCalender } from "react-icons/sl";
 import { FaPray, FaOm } from "react-icons/fa";
-
+import React from "react";
+import ReactDOM from "react-dom";
+import Countdown from "react-countdown";
 import Footer from "./components/Footer/Footer";
+const Completionist = () => <span>You are good to go!</span>;
+const renderer = ({days, hours, minutes, seconds, completed }) => {
+  if (completed) {
+    return <Completionist />;
+  } else {
+    return <span className="text-black font-bold"><span className="text-red-600">{days}</span> Days: <span className="text-red-600">{hours}</span> Hours: <span className="text-red-600">{minutes}</span> Minutes : <span className="text-red-600">{seconds}</span> Seconds Left</span>;
+  }
+};
 function App() {
   return (
     <>
@@ -19,10 +29,10 @@ function App() {
                   Welcome to
                 </h1>
                 <h1 className="text-4xl md:text-6xl font-crimson-text mb-4">
-                পাঁচ পাহাড় কালী মন্দির
+                  পাঁচ পাহাড় কালী মন্দির
                 </h1>
                 <p className="text-xl md:text-2xl">
-                শান্তি এবং আধ্যাত্মিকতার একটি স্থান
+                  শান্তি এবং আধ্যাত্মিকতার একটি স্থান
                 </p>
               </div>
             </div>
@@ -31,7 +41,7 @@ function App() {
           <section id="about" className="py-16 px-4">
             <div className="container mx-auto">
               <h2 className="text-3xl font-crimson-text text-[#8B4513] text-center mb-8">
-              আমাদের মন্দির সম্পর্কে
+                আমাদের মন্দির সম্পর্কে
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
@@ -42,9 +52,13 @@ function App() {
                   />
                 </div>
                 <div className="flex flex-col items-center justify-center">
-                  <h1 className="text-[#8B4513] text-5xl mb-3">আমাদের মন্দির পরিদর্শ করুন</h1>
+                  <h1 className="text-[#8B4513] text-5xl mb-3">
+                    আমাদের মন্দির পরিদর্শ করুন
+                  </h1>
                   <p className="text-lg font-crimson-text">
-                  আমাদের মন্দির আধ্যাত্মিক বৃদ্ধি এবং অভ্যন্তরীণ শান্তির জন্য নিবেদিত একটি পবিত্র স্থান। প্রার্থনা এবং ধ্যানে আমাদের সাথে যোগ দেওয়ার জন্য আমরা সর্বস্তরের ভক্তদের স্বাগত জানাই।
+                    আমাদের মন্দির আধ্যাত্মিক বৃদ্ধি এবং অভ্যন্তরীণ শান্তির জন্য
+                    নিবেদিত একটি পবিত্র স্থান। প্রার্থনা এবং ধ্যানে আমাদের সাথে
+                    যোগ দেওয়ার জন্য আমরা সর্বস্তরের ভক্তদের স্বাগত জানাই।
                   </p>
                 </div>
               </div>
@@ -57,13 +71,13 @@ function App() {
           >
             <div className="container mx-auto">
               <h2 className="text-3xl font-crimson-text text-center mb-8">
-              আমাদের সেবা
+                আমাদের সেবা
               </h2>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="flex flex-col justify-center items-center p-6 bg-[#FFF8F0] text-[#8B4513] rounded-lg">
                   <FaPray className="text-3xl" />
                   <h3 className="text-xl font-crimson-text mb-2">
-                  প্রতিদিনের প্রার্থনা
+                    প্রতিদিনের প্রার্থনা
                   </h3>
                   <p className="text-black">সকাল ও সন্ধ্যার প্রার্থনা সেশন</p>
                 </div>
@@ -75,10 +89,15 @@ function App() {
                 <div className="flex flex-col justify-center items-center p-6 bg-[#FFF8F0] text-[#8B4513] rounded-lg">
                   <SlCalender className="text-3xl mb-1" />
                   <h3 className="text-xl font-crimson-text mb-2">
-                  কমিউনিটি সার্ভিস
+                    কমিউনিটি সার্ভিস
                   </h3>
-                  <p className="text-center text-black">ছোট শিশুদের জন্য গীতা-পাঠ শেখান<br/>
-                  <span className="text-[#8B4513]">9:00 AM - 11:00 AM</span> </p>
+                  <p className="text-center text-black">
+                    ছোট শিশুদের জন্য গীতা-পাঠ শেখান
+                    <br />
+                    <span className="text-[#8B4513]">
+                      9:00 AM - 11:00 AM
+                    </span>{" "}
+                  </p>
                 </div>
               </div>
             </div>
@@ -96,6 +115,11 @@ function App() {
                   </h3>
                   <p className="mb-2">
                     <i className="far fa-calendar-alt mr-2"></i>October 31, 2025
+                  </p>
+                  <p>
+                    <Countdown renderer={renderer} date={new Date("2025-10-31")}>
+                      <Completionist />
+                    </Countdown>
                   </p>
                   <p>Join us for our biggest celebration of the year</p>
                 </div>
