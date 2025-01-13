@@ -45,7 +45,7 @@ const Galary = () => {
         <Marquee>
           <div>
             <img
-              className="h-[300px] md:h-[600px] w-full rounded-lg object-cover object-top lg:object-center"
+              className="h-[300px] md:h-[600px] w-full object-cover object-top lg:object-center"
               src={images[4]}
               alt="gallery-photo"
             />
@@ -53,7 +53,7 @@ const Galary = () => {
 
           <div>
             <img
-              className="h-[300px] md:h-[600px] w-full rounded-lg object-cover object-top lg:object-center"
+              className="h-[300px] md:h-[600px] w-full object-cover object-top lg:object-center"
               src={images[8]}
               alt="gallery-photo"
             />
@@ -61,7 +61,7 @@ const Galary = () => {
 
           <div>
             <img
-              className="h-[300px] md:h-[600px] w-full rounded-lg object-cover object-top lg:object-center"
+              className="h-[300px] md:h-[600px] w-full object-cover object-top lg:object-center"
               src={images[9]}
               alt="gallery-photo"
             />
@@ -69,7 +69,7 @@ const Galary = () => {
 
           <div>
             <img
-              className="h-[300px] md:h-[600px] w-full rounded-lg object-cover object-top lg:object-center"
+              className="h-[300px] md:h-[600px] w-full object-cover object-top lg:object-center"
               src={images[6]}
               alt="gallery-photo"
             />
@@ -77,7 +77,7 @@ const Galary = () => {
 
           <div>
             <img
-              className="h-[300px] md:h-[600px] w-full rounded-lg object-cover object-top lg:object-center"
+              className="h-[300px] md:h-[600px] w-full object-cover object-top lg:object-center"
               src={images[14]}
               alt="gallery-photo"
             />
