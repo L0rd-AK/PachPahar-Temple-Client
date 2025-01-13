@@ -1,5 +1,6 @@
 import { SlCalender } from "react-icons/sl";
-import { FaPray, FaOm } from "react-icons/fa";
+import { FaPray, FaOm, FaPhone } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import React from "react";
 import ReactDOM from "react-dom";
 import Countdown from "react-countdown";
@@ -55,7 +56,7 @@ function App() {
                   <h1 className="text-[#8B4513] text-5xl mb-3">
                     আমাদের মন্দির পরিদর্শ করুন
                   </h1>
-                  <p className="text-lg font-crimson-text">
+                  <p className="text-lg text-black">
                     আমাদের মন্দির আধ্যাত্মিক বৃদ্ধি এবং অভ্যন্তরীণ শান্তির জন্য
                     নিবেদিত একটি পবিত্র স্থান। প্রার্থনা এবং ধ্যানে আমাদের সাথে
                     যোগ দেওয়ার জন্য আমরা সর্বস্তরের ভক্তদের স্বাগত জানাই।
@@ -106,12 +107,12 @@ function App() {
           <section id="events" className="py-16 px-4">
             <div className="container mx-auto">
               <h2 className="text-3xl font-crimson-text text-[#8B4513] text-center mb-8">
-                Upcoming Events
+              আসন্ন ইভেন্ট
               </h2>
               <div className="grid md:grid-cols-2 gap-8 text-center">
                 <div className="bg-white p-6 rounded-lg shadow-lg">
                   <h3 className="text-xl font-crimson-text text-[#8B4513] mb-2">
-                    Annual Festival
+                  বার্ষিক উৎসব
                   </h3>
                   <p className="mb-2">
                     <i className="far fa-calendar-alt mr-2"></i>October 31, 2025
@@ -121,16 +122,16 @@ function App() {
                       <Completionist />
                     </Countdown>
                   </p>
-                  <p>Join us for our biggest celebration of the year</p>
+                  <p>বছরের সবচেয়ে বড় উদযাপনের জন্য আমাদের সাথে যোগ দিন</p>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-lg text-center">
                   <h3 className="text-xl font-crimson-text text-[#8B4513] mb-2">
-                    Weekly Bhajan
+                  সাপ্তাহিক ভজন
                   </h3>
                   <p className="mb-2">
-                    <i className="far fa-calendar-alt mr-2"></i>Every Sunday
+                    <i className="far fa-calendar-alt mr-2"></i>প্রতি রবিবার
                   </p>
-                  <p>Experience divine music and chanting</p>
+                  <p>ঐশ্বরিক সঙ্গীত এবং জপ অভিজ্ঞতা</p>
                 </div>
               </div>
             </div>
@@ -142,39 +143,43 @@ function App() {
           >
             <div className="container mx-auto">
               <h2 className="text-3xl font-crimson-text text-center mb-8">
-                Contact Us
+              আমাদের সাথে যোগাযোগ করুন
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-xl font-crimson-text mb-4">Visit Us</h3>
+                  <h3 className="text-xl font-crimson-text mb-4">আমাদের মন্দিরে আসুন</h3>
                   <p className="mb-2">
-                    <i className="fas fa-map-marker-alt mr-2"></i>123 Temple
-                    Street
+                    <i className="fas fa-map-marker-alt mr-2"></i>বিশ্রামপুর ঘোষপাড়া
+
                   </p>
-                  <p className="mb-2">
-                    <i className="fas fa-phone mr-2"></i>(555) 123-4567
+                  <p className="mb-2 flex gap-1">
+                    <div className=" flex gap-2 justify-center items-center">
+                    <FaPhone/>+88 01788133927
+                    </div>
                   </p>
-                  <p>
-                    <i className="fas fa-envelope mr-2"></i>
-                    info@divinetemple.com
+                  <p className="flex gap-1">
+                    <div className="flex gap-2 justify-center items-center">
+                    <MdEmail />
+                    amitkumar89155@gmail.com
+                    </div>
                   </p>
                 </div>
                 <form className="space-y-4">
                   <input
                     type="text"
                     name="name"
-                    placeholder="Your Name"
+                    placeholder="আপনার নাম"
                     className="w-full p-2 rounded text-[#8B4513]"
                   />
                   <input
                     type="email"
                     name="email"
-                    placeholder="Your Email"
+                    placeholder="আপনার ইমেইল"
                     className="w-full p-2 rounded text-[#8B4513]"
                   />
                   <textarea
                     name="message"
-                    placeholder="Your Message"
+                    placeholder="আপনার বার্তা"
                     rows="4"
                     className="w-full p-2 rounded text-[#8B4513]"
                   ></textarea>
@@ -182,7 +187,7 @@ function App() {
                     type="submit"
                     className="bg-[#FFD700] text-[#8B4513] px-6 py-2 rounded hover:bg-[#FFE55C]"
                   >
-                    Send Message
+                    বার্তা পাঠান
                   </button>
                 </form>
               </div>
