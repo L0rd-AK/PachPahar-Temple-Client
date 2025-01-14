@@ -4,6 +4,8 @@ import Register from "../Register/Register"
 import App from "../../App";
 import Root from "../../Root";
 import Galary from "../GalaryPage/Galary";
+import Contact from "../Contact/Contact";
+import Donation from "../Donation/Donation";
 
 
 const Routes = createBrowserRouter([
@@ -26,6 +28,14 @@ const Routes = createBrowserRouter([
       {
         path: "/gallery",
         element: <Galary />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/donate",
+        element: <Donation />,
       },
     ],
   },

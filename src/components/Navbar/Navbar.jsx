@@ -43,18 +43,10 @@ function Navbar() {
               </Link>
             </li>
               <li>
-                <a>Service</a>
-                <ul className="p-2 z-10">
-                  <li>
-                    <a>Donation</a>
-                  </li>
-                  <li>
-                    <a>Contribute</a>
-                  </li>
-                </ul>
+                <a href='/donate'>Donate</a>
               </li>
               <li>
-                <a href="#contact">Contact Us</a>
+                <a href="/contact">Contact Us</a>
               </li>
             </ul>
           </div>
@@ -75,20 +67,10 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              <details>
-                <summary>Service</summary>
-                <ul className="p-2 z-10">
-                  <li>
-                    <a>Donation</a>
-                  </li>
-                  <li>
-                    <a>Contribute</a>
-                  </li>
-                </ul>
-              </details>
+            <a href='/donate'>Donate</a>
             </li>
             <li>
-              <a href="#contact">Contact Us</a>
+              <a href="/contact">Contact Us</a>
             </li>
           </ul>
         </div>
@@ -125,9 +107,9 @@ function Navbar() {
                           <a>Profile</a>
                         </Link>
                       </li>
-                      <li>
+                      {/* <li>
                         <a href="">Dashboard</a>
-                      </li>
+                      </li> */}
                       <li>
                         <Link onClick={() => logOut()} to="/">
                           <a>Logout</a>
