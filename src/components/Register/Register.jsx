@@ -27,10 +27,12 @@ const Register = () => {
   };
 
   const onSubmit = (data) => {
-    console.log(data);
+    console.log("clicked", data);
     create_user_with_email(data?.email, data?.password)
       .then((res) => {
         console.log("after mail verification", res);
+        toast.success(`successfully loged in`);
+        navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
         console.log(err);
@@ -47,7 +49,7 @@ const Register = () => {
               Create and account
             </h1>
             <namem className="space-y-4 md:space-y-6" action="#">
-              <form className="space-y-4 md:space-y-6" onSubmit={onSubmit}>
+              <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit(onSubmit)}>
                 <div>
                   <label
                     name="name"
@@ -62,6 +64,7 @@ const Register = () => {
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Amit Kumar"
                     required
+                    {...register("name")}
                   />
                 </div>
                 <div>
@@ -78,6 +81,7 @@ const Register = () => {
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="name@company.com"
                     required
+                    {...register("email")}
                   />
                 </div>
                 <div>
@@ -94,6 +98,7 @@ const Register = () => {
                     placeholder="••••••••"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required
+                    {...register("password")}
                   />
                 </div>
                 <div className="flex items-start">
