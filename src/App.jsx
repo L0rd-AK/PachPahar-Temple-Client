@@ -1,10 +1,7 @@
 import { SlCalender } from "react-icons/sl";
 import { FaPray, FaOm, FaPhone } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
 import React from "react";
-import ReactDOM from "react-dom";
 import Countdown from "react-countdown";
-import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
 const Completionist = () => <span>You are good to go!</span>;
 const renderer = ({days, hours, minutes, seconds, completed }) => {
