@@ -9,7 +9,7 @@ createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
       <RouterProvider router={Routes} />
-      <Analytics />
     </AuthProvider>
+    <Analytics />
   </React.StrictMode>
 );
