@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Analytics } from "@vercel/analytics/react"
 const Root = () => {
   return (
     <>
@@ -18,6 +19,7 @@ const Root = () => {
         pauseOnHover
         theme="light"
       />
+      <Analytics />
       <Navbar />
       <Outlet />
       <Footer />
