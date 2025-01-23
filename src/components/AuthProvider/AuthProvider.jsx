@@ -1,6 +1,16 @@
-import { createContext,  useState } from "react";
+import { createContext, useState } from "react";
 import auth from "../Firebase/firebase.config.js";
-import {GoogleAuthProvider,createUserWithEmailAndPassword,onAuthStateChanged,sendEmailVerification,signInWithEmailAndPassword,signInWithPopup,signOut,updateProfile,sendPasswordResetEmail} from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  sendEmailVerification,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  updateProfile,
+  sendPasswordResetEmail,
+} from "firebase/auth";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
 export const AuthContext = createContext(null);
@@ -35,40 +45,36 @@ const AuthProvider = ({ children }) => {
   const update_password = (email) => {
     sendPasswordResetEmail(auth, email)
       .then(() => {
-        return {message: true}
+        return { message: true };
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        return {errorCode,errorMessage}
+        return { errorCode, errorMessage };
         // ..
       });
-  }
+  };
   // Email verification
-  const email_verify=()=>{
-    sendEmailVerification(auth.currentUser)
-    .then(() => {
-      return {code: "successful"}
+  const email_verify = () => {
+    sendEmailVerification(auth.currentUser).then(() => {
+      return { code: "successful" };
     });
-  }
+  };
 
   // sign Out
   const logOut = () => {
-    setLoading(true)
+    setLoading(true);
     return signOut(auth);
   };
 
-
-
   useEffect(() => {
-
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
         setLoading(false);
       } else {
         console.log("no user");
-        setUser(false)
+        setUser(false);
       }
     });
 
@@ -88,7 +94,7 @@ const AuthProvider = ({ children }) => {
     loading,
     update_password,
     email_verify,
-    sendEmailVerification
+    sendEmailVerification,
   };
 
   return <AuthContext.Provider value={info}>{children}</AuthContext.Provider>;
